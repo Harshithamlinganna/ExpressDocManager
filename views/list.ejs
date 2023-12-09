@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Management</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Contents</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% documents.forEach(document => { %>
+                <tr>
+                    <td><a href="/documents/<%= document.documentId %>"><%= document.title %></a></td>
+                    <td><%= document.contents.substring(0, 100) %></td> <!-- Display the first 100 characters as a preview -->
+                    <td><%= document.lastUpdated %></td>
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <br>
+    <p style="text-align: center;"><a href="/documents/create">Create New Document</a></p>
+    <a href="/">Go Back</a>
+</body>
+</html>

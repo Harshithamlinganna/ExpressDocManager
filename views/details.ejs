@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Details</title>
+    <style>
+        div{
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+        }
+        pre {
+            white-space: pre-wrap;
+
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .actions a {
+            margin-right: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Title: <%= document.title %></h1>
+    <p>Last Updated: <%= document.lastUpdated %></p>
+    <pre>Contents: <%= document.contents %></pre>
+    </div>
+    <div class="actions">
+        <a href="/documents/<%= document.documentId %>/edit">Edit</a>
+        <a href="/documents/<%= document.documentId %>/delete">Delete</a>
+    </div>
+    <br>
+    <a href="/documents/">Go Back</a>
+</body>
+</html>

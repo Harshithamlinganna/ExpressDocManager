@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Document</title>
+</head>
+<body>
+    <h1>Create New Document</h1>
+    <form action="/documents" method="post">
+        <table>
+            <tr>
+                <td><label for="title">Title:</label></td>
+                <td><input type="text" name="title" id="title" required></td>
+            </tr>
+            <tr>
+                <td><label for="contents">Contents:</label></td>
+                <td><textarea name="contents" id="contents" required></textarea></td>
+            </tr>
+        </table>
+        <button type="submit">Create Document</button>
+    </form>
+</body>
+</html>

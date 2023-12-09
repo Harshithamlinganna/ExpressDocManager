@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Document</title>
+</head>
+<body>
+    <h1>Edit Document</h1>
+    <form action="/documents/<%= document.documentId %>/edit" method="post">
+        <table>
+            <tr>
+                <td><label for="title">Title:</label></td>
+                <td><input type="text" name="title" id="title" value="<%= document.title %>" required></td>
+            </tr>
+            <tr>
+                <td><label for="contents">Contents:</label></td>
+                <td><textarea name="contents" id="contents" required><%= document.contents %></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Save Changes</button></td>
+            </tr>
+        </table>
+        <a href="/documents/<%= document.documentId %>">Go Back</a>
+    </form>
+</body>
+</html>
